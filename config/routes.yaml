@@ -1,7 +1,12 @@
-controllers:
-    resource: ../src/Controller/
-    type: annotation
+number:
+    path: /
+    controller: App\controller\LuckyController::number
 
-kernel:
-    resource: ../src/Kernel.php
-    type: annotation
+question_list:
+    path: /questions
+    controller: App\Controller\QuestionController::list
+
+question_show:
+    path: /questions/{slug}
+    controller: App\Controller\QuestionController::show
+    
