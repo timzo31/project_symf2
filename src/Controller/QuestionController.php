@@ -3,24 +3,17 @@
 
   use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
   use Symfony\Component\HttpFoundation\Response;
+  use Twig\Environment;
 
 
   class QuestionController extends AbstractController
   {
 
-    public function list()
+    public function homepage()
     {
-      return new Response('
-          <html>
-            <body>
-              <ul>
-                <li><a href="#">How to install composer</a></li>
-                <li><a href="#">How to fix composer installation issues</a></li>
-                <li><a href="#">Solve Bugs in Symfony</a></li>
-              </ul>
-            </body>
-          </html>
-          ');
+        //$html = $twigEnvironment->render('question/homepage.html.twig');
+        //return new Response($html);
+      return $this->render('question/homepage.html.twig');
     }
 
     public function show($slug)

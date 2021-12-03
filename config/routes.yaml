@@ -1,11 +1,15 @@
-number:
+homepage:
     path: /
-    controller: App\controller\LuckyController::number
-
-question_list:
-    path: /questions
-    controller: App\Controller\QuestionController::list
+    controller: App\Controller\QuestionController::homepage
 
 question_show:
     path: /questions/{slug}
     controller: App\Controller\QuestionController::show
+
+commentVote:
+    path: /comments/{id}/vote/{direction}
+    controller: App\Controller\CommentController::commentVote
+    requirements:
+        id: '\d+'
+        direction: 'up|down'
+    methods: POST
